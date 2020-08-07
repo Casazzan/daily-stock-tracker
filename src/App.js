@@ -7,7 +7,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            symbols: ["MSFT"],
+            symbols: ["MSFT", "AAPL", "SPY", "NASDAQ", "FB", "TSLA"],
         }
     }
 
@@ -32,6 +32,7 @@ class App extends React.Component {
                 symbols: this.state.symbols.concat([inputVal]),
             })
         }
+        document.getElementById('submitter').value = "";
     }
 
 
@@ -60,8 +61,10 @@ class App extends React.Component {
             />
         )
         return (
-            <div id='main'>
-                {cardItems}
+            <div>
+                <div id='main'>
+                    {cardItems}
+                </div>
                 <Submitter
                     onClick={() => this.clickHandler()}
                     search={(symbol) => this.searchSymbol(symbol)}

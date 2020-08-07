@@ -60,19 +60,37 @@ class Submitter extends React.Component {
         return inputOptions;
     }
 
+    emptyList() {
+        this.setState({
+            list: false,
+        });
+    }
+
     render() {
         const inputOptions = this.getList();
         return (
             <div id="submitter-container">
                 <div>
-                    <input type="text" placeholder="stock symbol" id="submitter" onChange={(e) => this.handleChange(e)}></input>
+                    <input
+                        type="text"
+                        placeholder="Stock symbol"
+                        id="submitter"
+                        onChange={(e) => this.handleChange(e)}
+                        onBlur={() => this.emptyList()}
+                    >
+                    </input>
                     {inputOptions &&
                         <ul>
                             {inputOptions}
                         </ul>
                     }
                 </div>
-                <button type="button" onClick={() => this.props.onClick()}>+</button>
+                <button
+                    type="button"
+                    title="Add Stock"
+                    onClick={() => this.props.onClick()}
+                >
+                    +</button>
             </div>
         )
     }
