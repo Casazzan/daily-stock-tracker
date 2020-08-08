@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/daily-stock-tracker/static/css/main.281cb9bb.chunk.css",
+    "main.js": "/daily-stock-tracker/static/js/main.24bdbccc.chunk.js",
+    "main.js.map": "/daily-stock-tracker/static/js/main.24bdbccc.chunk.js.map",
+    "runtime-main.js": "/daily-stock-tracker/static/js/runtime-main.02b0c2d4.js",
+    "runtime-main.js.map": "/daily-stock-tracker/static/js/runtime-main.02b0c2d4.js.map",
+    "static/css/2.7d0b1304.chunk.css": "/daily-stock-tracker/static/css/2.7d0b1304.chunk.css",
+    "static/js/2.4faffd7c.chunk.js": "/daily-stock-tracker/static/js/2.4faffd7c.chunk.js",
+    "static/js/2.4faffd7c.chunk.js.map": "/daily-stock-tracker/static/js/2.4faffd7c.chunk.js.map",
+    "index.html": "/daily-stock-tracker/index.html",
+    "precache-manifest.ed0ae12f9606d44906ab6a74420e2c1f.js": "/daily-stock-tracker/precache-manifest.ed0ae12f9606d44906ab6a74420e2c1f.js",
+    "service-worker.js": "/daily-stock-tracker/service-worker.js",
+    "static/css/2.7d0b1304.chunk.css.map": "/daily-stock-tracker/static/css/2.7d0b1304.chunk.css.map",
+    "static/css/main.281cb9bb.chunk.css.map": "/daily-stock-tracker/static/css/main.281cb9bb.chunk.css.map",
+    "static/js/2.4faffd7c.chunk.js.LICENSE.txt": "/daily-stock-tracker/static/js/2.4faffd7c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.02b0c2d4.js",
+    "static/css/2.7d0b1304.chunk.css",
+    "static/js/2.4faffd7c.chunk.js",
+    "static/css/main.281cb9bb.chunk.css",
+    "static/js/main.24bdbccc.chunk.js"
+  ]
+}
