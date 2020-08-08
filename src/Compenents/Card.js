@@ -11,17 +11,20 @@ class Card extends React.Component {
 
     componentDidMount() {
         const url = this.props.urlFront + this.props.symbol + this.props.urlBack;
-        /* fetch(url)
+        fetch(url)
             .then(response => response.json())
             .then(data => {
                 const obj = data["Time Series (Daily)"];
+                if (!obj) return;
                 const mostRecentEntry = obj[Object.keys(obj)[0]];
-                this.setState(
-                    {
-                        data: mostRecentEntry,
-                    }
-                )
-            }); */
+                if (mostRecentEntry) {
+                    this.setState(
+                        {
+                            data: mostRecentEntry,
+                        }
+                    )
+                }
+            });
     }
 
     getCloseColor() {
@@ -39,9 +42,9 @@ class Card extends React.Component {
                 <h1>{this.props.symbol}</h1>
                 <div className="delete-card-btn" onClick={(e) => this.props.onDeleteClick(e)}>X</div>
                 <div className="cardInfo">
-                    <DataPoint type="Open" value={/* this.state.data["1. open"] */ "12000"} />
-                    <DataPoint type="High" value={/* this.state.data["2. high"] */ "12000"} color="green" />
-                    <DataPoint type="Low" value={/* this.state.data["3. low"] */ "12000"} color="red" />
+                    <DataPoint type="Open" value={this.state.data["1. open"]} />
+                    <DataPoint type="High" value={this.state.data["2. high"]} color="green" />
+                    <DataPoint type="Low" value={this.state.data["3. low"]} color="red" />
                     <DataPoint type="Close" value={this.state.data["4. close"]} color={this.getCloseColor()} />
                 </div>
             </div>

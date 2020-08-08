@@ -76,7 +76,7 @@ class Submitter extends React.Component {
                         placeholder="Stock symbol"
                         id="submitter"
                         onChange={(e) => this.handleChange(e)}
-                        onBlur={() => this.emptyList()}
+                        onBlur={() => setTimeout(() => this.emptyList(), 500)}
                     >
                     </input>
                     {inputOptions &&

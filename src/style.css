@@ -146,3 +146,13 @@ ul {
     transform: scale(1.05);
     background-color: rgb(37, 37, 37);
 }
+
+#disclaimer{
+    position: absolute;
+    right:5px;
+    text-align: center;
+}
+
+#disclaimer > p {
+    font-size: .7em;
+}

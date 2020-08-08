@@ -7,13 +7,13 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            symbols: ["MSFT", "AAPL", "SPY", "NASDAQ", "FB", "TSLA"],
+            symbols: ["MSFT", "AAPL", "FB", "TSLA"],
         }
     }
 
     clickHandler() {
         const inputElement = document.getElementById('submitter');
-        this.searchSymbol(inputElement.value);
+        this.searchSymbol(inputElement.vlalue);
     }
 
     deleteClickHandler(e) {
@@ -27,7 +27,7 @@ class App extends React.Component {
 
     searchSymbol(symbol) {
         const inputVal = formatInput(symbol);
-        if (this.isValidInput(inputVal)) {
+        if (!this.state.symbols.includes(inputVal) && this.isValidInput(inputVal)) {
             this.setState({
                 symbols: this.state.symbols.concat([inputVal]),
             })
@@ -39,7 +39,16 @@ class App extends React.Component {
     isValidInput(str) {
         if (str) {
             try {
-                fetch(this.props.urlFront + str + this.props.urlBack);
+                fetch(this.props.urlFront + str + this.props.urlBack).then(response => response.json()).then(data => {
+                    if (data["Note"]) {
+                        console.log("Too many queries per minute. Max of 5. Sorry, that is all that is available for free");
+                        return false;
+                    }
+                    if (data["Error"]) {
+                        console.log(data["Error:"])
+                        return false;
+                    }
+                });
                 return true;
             } catch (error) {
                 console.log('error: ', error);
@@ -62,6 +71,9 @@ class App extends React.Component {
         )
         return (
             <div>
+                <div id='disclaimer'>Disclaimer!<br></br>Max of 5 API queries per minute
+                <p>Sorry, I'm cheap :)</p>
+                </div>
                 <div id='main'>
                     {cardItems}
                 </div>
